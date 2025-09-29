@@ -1,0 +1,28 @@
+CREATE DATABASE trouve-ton-artisan
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
+
+CREATE TABLE artisanentreprise (
+id_artisan INT(17) NOT NULL AUTO_INCREMENT COMMENT 'id de chaque artisant/entreprise' ,
+
+Nom VARCHAR(100) NOT NULL COMMENT 'Nom unique de chaque artisant/entreprise' ,
+
+Spécialité VARCHAR(100) NOT NULL COMMENT 'Spécialité de chaque artisant/entreprise' ,
+
+Note DECIMAL(5,0) NOT NULL COMMENT 'Note de chaque artisant/entreprise' ,
+
+Ville VARCHAR(10) NOT NULL COMMENT 'La localisation de chaque artisant/entreprise' ,
+
+A_propos VARCHAR(500) NOT NULL COMMENT 'Information supplémentaires de chaque artisant/entreprise' ,
+
+Email VARCHAR(100) NOT NULL COMMENT 'Email unique de chaque artisant/entreprise' ,
+
+Site_Web VARCHAR(100)NOT NULL COMMENT 'Le site web de chaque artisant/entreprise' ,
+
+Catégorie VARCHAR(100) NOT NULL COMMENT 'La catégorie de chaque artisant/entreprise' ,
+
+Top BOOLEAN(1) NOT NULL COMMENT 'Le top de chaque artisant/entreprise' ,
+
+PRIMARY KEY (id_artisan), UNIQUE Nom (Nom), UNIQUE email (email),
+
+ENGINE = InnoDB COMMENT = 'Table des différents artisans ou entreprises';
