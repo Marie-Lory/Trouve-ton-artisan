@@ -1,0 +1,203 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* --- Police personnalisée --- */
+@font-face {
+  font-family: 'Graphik-Regular';
+  src: url('/assets/font/Graphik/Graphik-Regular-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* --- Section présentation --- */
+.presentation {
+  margin: 2rem auto;
+  max-width: 900px; /* limite la largeur pour une meilleure lisibilité */
+  padding: 0 1rem;
+}
+
+/* --- Titre principal centré --- */
+.titre-principal {
+  font-family: 'Graphik-Regular', sans-serif;
+  font-size: 2.5rem;
+  color: #0074c7;
+  text-align: center; /* ✅ centré sur la page */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Étapes alignées à gauche --- */
+.etape {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.25rem;
+  margin: 0.8rem 0;
+  text-align: left; /* ✅ alignement à gauche */
+  line-height: 1.6;
+}
+
+.etape span {
+  color: #333; /* texte descriptif en gris foncé */
+}
+
+/* --- Couleurs par étape --- */
+.etape1 {
+  color: #0074c7; /* bleu */
+}
+
+.etape2 {
+  color: #cd2c2e; /* rouge */
+}
+
+.etape3 {
+  color: #81b864; /* vert */
+}
+
+.etape4 {
+  color: #00497d; /* bleu foncé */
+}
+
+/* Lien actif souligné automatiquement */
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+  font-weight: bold; /* si vous souhaitez aussi en gras */
+}
+
+.presentation {
+    text-align: center;
+    position: relative;
+}
+
+.image-presentation {
+    width: 100%;
+    height: auto;
+}
+
+main div button:hover {
+    background-color:#980c0c;
+}
+
+/* Style du bouton */
+#openModalBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.text-presentation-h1 {
+    position: absolute;
+    width: 75%;
+    top: 40%; /* position verticale centrée */
+    left: 50%; /* position horizontale centrée */
+    transform: translate(-50%, -50%); /* recentrage exact */
+    margin-bottom: 2%;
+    color: white; /* couleur du texte */
+    font-weight: bold;
+}
+
+.text-presentation-h2 {
+    position: absolute;
+    width: 75%;
+    top: 52%; /* position verticale centrée */
+    left: 50%; /* position horizontale centrée */
+    transform: translate(-50%, -50%); /* recentrage exact */
+    color: white; /* couleur du texte */
+    font-weight: bold;
+}
+
+.div-espacement {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border: 25px solid white;
+    box-shadow: 5px 5px 20px 1px #adb5bd;
+    display: flex;
+    flex-direction: row;
+}
+
+.section-espacement {
+    margin-right: 3%;
+    width: 50%;
+    /* Ajustez la largeur selon vos besoins */
+}
+
+section img {
+    width: 100%;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+/* --- Couleur du header et du footer --- */
+.navbar {
+  background-color: #FFFFFF !important;
+}
+
+/* --- NAVBAR PERSONNALISÉE --- */
+.custom-navbar {
+  background-color: #FFFFFF !important;
+  color: white;
+}
+
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: white !important;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #e0e0e0 !important;
+}
+
+/* Liens et texte de la nav en noir */
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: black !important;
+  font-weight: 600;
+}
+
+/* Couleur du texte au survol */
+.custom-navbar .nav-link:hover {
+  color: #222 !important; /* gris foncé au survol */
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #0074c7 !important;
+  color: white !important;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* --- Liens horizontaux du footer --- */
+.footer-section-2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-section-2 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-section-2 a:hover {
+  text-decoration: underline;
+}
+
+/* Conteneur global du footer */
+footer > div > section > Link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ✅ Centre verticalement */
+  width: 100%;
+}
+
+/* Première section (adresse) */
+.footer-section-1 {
+  margin-bottom: 1rem;
+}
