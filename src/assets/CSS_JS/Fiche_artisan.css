@@ -1,0 +1,73 @@
+.fiche-artisan {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  color: #333;
+}
+
+.artisan-img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.artisan-nom {
+  font-size: 2rem;
+  color: #0074c7;
+  margin-bottom: 1rem;
+}
+
+.artisan-infos {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.artisan-description {
+  margin-top: 1rem;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.contact-form-container {
+  margin-top: 2rem;
+  background: #eef6fc;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.contact-form-container h2 {
+  color: #0074c7;
+  margin-bottom: 1rem;
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form-container button {
+  background-color: #0074c7;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form-container button:hover {
+  background-color: #005f9e;
+}
