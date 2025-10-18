@@ -64,7 +64,7 @@
 
 /* couleur pleine/demi/vide */
 .star.full { color: #82b864; }    /* doré */
-.star.half { color: #0e0d09; }    /* demi-étoile est fournie par FaStarHalfAlt, couleur dorée */
+.star.half { color: #82b864; }    /* demi-étoile est fournie par FaStarHalfAlt, couleur dorée */
 .star.empty { color: #ccc; }      /* gris pour vide */
 
 /* Tu peux aussi ajouter un effet survol si tu veux */
@@ -79,4 +79,5 @@
 
 .star.empty {
   color: #ccc; /* gris clair */
+
 }
