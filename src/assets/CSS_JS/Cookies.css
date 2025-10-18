@@ -1,0 +1,11 @@
+/* --- Centrage du texte principal --- */
+.titre-principal {
+  font-family: 'Graphik-Regular', sans-serif;
+  font-size: 4rem;
+  color: black; /* ✅ Texte noir */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* ✅ Centre verticalement dans la page */
+}
