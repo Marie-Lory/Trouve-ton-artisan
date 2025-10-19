@@ -23,4 +23,7 @@ npm install
 npm run dev
 - Tu verras une URL du style :
 http://localhost:5173/
+Et pour l'url en ligne c'est:
+https://vercel.com/marie-lorys-projects/trouve-ton-artisan
+
 - Clique dessus et ton projet React s’affichera
