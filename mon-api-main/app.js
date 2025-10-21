@@ -1,48 +1,37 @@
-// ✅ app.js — version finale
+// ✅ app.js - version stable Render + CORS
 import 'dotenv/config';
 import express from "express";
 import cors from "cors";
-import router from "./routes/ArtisansRoutes.js"; // ⚙️ assure-toi que ce fichier exporte `router`
+import router from "./routes/ArtisansRoutes.js";
 import sequelize from "./config/db.js";
 
 const app = express();
 
-// ========================================
-// 🛡️ CONFIGURATION CORS
-// ========================================
-const allowedOrigins = [
-  "http://localhost:5173", // pour ton développement local
-  "https://trouve-ton-artisan-pi.vercel.app", // ton frontend en ligne (Vercel)
-  "https://trouve-ton-artisan-1-a584.onrender.com", // ton backend Render
-];
+// ✅ CORS robuste et global (avant les routes)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
 
 app.use(cors({
   origin: [
-    "http://localhost:5173", // ton frontend local
-    "https://trouve-ton-artisan-pi.vercel.app" // ton frontend Vercel
+    "http://localhost:5173",
+    "https://trouve-ton-artisan-pi.vercel.app"
   ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
 
-// Permet de répondre aux prérequis de CORS (préflight)
-app.options("*", cors());
-
-// ========================================
-// ⚙️ MIDDLEWARES GLOBAUX
-// ========================================
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-// ========================================
-// 📡 ROUTES PRINCIPALES
-// ========================================
+// ✅ Route principale
 app.use("/api/Artisans", router);
 
-// ========================================
-// 🧩 TEST DE CONNEXION MYSQL
-// ========================================
+// ✅ Test de connexion MySQL
 (async () => {
   try {
     await sequelize.authenticate();
@@ -52,15 +41,15 @@ app.use("/api/Artisans", router);
   }
 })();
 
-// ========================================
-// 🚀 LANCEMENT DU SERVEUR
-// ========================================
-const PORT = process.env.PORT || 5000;
+// ✅ Vérification santé pour Render
+app.get("/", (req, res) => {
+  res.send("✅ API Trouve Ton Artisan en ligne !");
+});
 
-// ⚠️ Render nécessite de se binder sur "0.0.0.0"
+// 🚀 Serveur
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`✅ Serveur lancé et accessible sur le port ${PORT}`);
-  console.log("🌍 API disponible sur /api/Artisans");
+  console.log(`✅ Serveur lancé sur le port ${PORT} (Render prêt)`);
 });
 
 export default app;
