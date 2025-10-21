@@ -25,8 +25,8 @@ app.use("/api/Artisans", ArtisansRoutes);
 
 // Lancement du serveur
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Backend API sur http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`✅ Serveur lancé sur le port ${PORT}`);
 });
 
 export default app;
