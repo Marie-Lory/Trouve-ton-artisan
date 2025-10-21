@@ -1,12 +1,13 @@
-import 'dotenv/config'; // ✅ Charge automatiquement les variables du fichier .env
+// ✅ app.js
+import 'dotenv/config';
 import express from "express";
 import cors from "cors";
-import router from "./routes/ArtisansRoutes.js"; // adapte si ton dossier diffère
-import sequelize from "./config/db.js"; // ton fichier de connexion MySQL/Sequelize
+import router from "./routes/ArtisansRoutes.js"; // le nom doit correspondre à ce que tu exportes
+import sequelize from "./config/db.js";
 
 const app = express();
 
-// Middleware
+// 🔧 Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -28,10 +29,10 @@ app.use(cors({
 
 app.use(express.json());
 
-// Routes principales
+// ✅ Routes principales
 app.use("/api/Artisans", router);
 
-// Test de connexion à MySQL
+// 🔍 Test de connexion MySQL
 (async () => {
   try {
     await sequelize.authenticate();
@@ -41,7 +42,7 @@ app.use("/api/Artisans", router);
   }
 })();
 
-// Lancement du serveur
+// 🚀 Lancement du serveur
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Serveur lancé sur le port ${PORT}`);
