@@ -17,17 +17,17 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true); // Autorise les requêtes internes (Postman, backend)
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      console.warn(`❌ Requête bloquée par CORS depuis : ${origin}`);
-      return callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: [
+    "http://localhost:5173", // ton frontend local
+    "https://trouve-ton-artisan-pi.vercel.app" // ton frontend Vercel
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
+
+// Permet de répondre aux prérequis de CORS (préflight)
+app.options("*", cors());
 
 // ========================================
 // ⚙️ MIDDLEWARES GLOBAUX
