@@ -10,6 +10,24 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Configuration CORS explicite
+const allowedOrigins = [
+  "http://localhost:5173", // ton environnement de développement local
+  "https://trouve-ton-artisan-pi.vercel.app" // ton frontend Vercel
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Autorise les requêtes sans origine (comme Postman)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true,
+}));
+
+app.use(express.json());
+
 // Routes principales
 app.use("/api/Artisans", router);
 
