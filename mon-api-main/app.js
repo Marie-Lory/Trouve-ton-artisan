@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routes principales
-app.use("/api/Artisans", router);
+app.use("/api/Artisans", ArtisansRoutes);
 
 // Test de connexion à MySQL
 (async () => {
