@@ -1,0 +1,82 @@
+/* --- Titre principal centré --- */
+.titre-principal {
+  font-family: 'Graphik-Regular', sans-serif;
+  font-size: 2.5rem;
+  color: #0074c7 !important;
+  text-align: center; /* ✅ centré sur la page */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin: 2rem auto;
+  max-width: 900px; /* limite la largeur pour une meilleure lisibilité */
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* --- Étapes alignées à gauche --- */
+.etape {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.25rem;
+  margin: 0.8rem 0;
+  text-align: left; /* ✅ alignement à gauche */
+  line-height: 1.6;
+}
+
+/* --- Étapes alignées à gauche --- */
+.classement-artisans {
+  font-family: 'Graphik-Regular', sans-serif;
+  color: #0074c7;
+  font-size: 1.25rem;
+  margin: 0.8rem 0;
+  text-align: left; /* ✅ alignement à gauche */
+  line-height: 1.6;
+}
+
+.etape span {
+  color: #333; /* texte descriptif en gris foncé */
+}
+
+/* --- Couleurs par étape --- */
+.etape1 {
+  color: #0074c7; /* bleu */
+}
+
+.etape2 {
+  color: #cd2c2e; /* rouge */
+}
+
+.etape3 {
+  color: #81b864; /* vert */
+}
+
+.etape4 {
+  color: #00497d; /* bleu foncé */
+}
+
+/* === STARS === */
+.stars-wrapper { display: inline-block; margin-top: 4px; }
+
+.star {
+  color: #82b864; /* or #ffb400 pour un doré plus doux */
+  font-size: 1.2rem;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+/* couleur pleine/demi/vide */
+.star.full { color: #82b864; }    /* doré */
+.star.half { color: #82b864; }    /* demi-étoile est fournie par FaStarHalfAlt, couleur dorée */
+.star.empty { color: #ccc; }      /* gris pour vide */
+
+/* Tu peux aussi ajouter un effet survol si tu veux */
+.star:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.star.filled {
+  color: #82b864; /* doré */
+}
+
+.star.empty {
+  color: #ccc; /* gris clair */
+}
