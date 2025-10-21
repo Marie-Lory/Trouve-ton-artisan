@@ -11,17 +11,20 @@ const app = express();
 // 🛡️ CONFIGURATION CORS
 // ========================================
 const allowedOrigins = [
-  "http://localhost:5173", // ton environnement local
+  "http://localhost:5173", // pour ton développement local
   "https://trouve-ton-artisan-pi.vercel.app", // ton frontend en ligne (Vercel)
+  "https://trouve-ton-artisan-1-a584.onrender.com", // ton backend Render
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    // Autorise les requêtes locales et sans origine (Postman, tests internes)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-    console.warn(`❌ Requête bloquée par CORS depuis : ${origin}`);
-    return callback(new Error("Not allowed by CORS"));
+    if (!origin) return callback(null, true); // Autorise les requêtes internes (Postman, backend)
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      console.warn(`❌ Requête bloquée par CORS depuis : ${origin}`);
+      return callback(new Error("Not allowed by CORS"));
+    }
   },
   credentials: true,
 }));
