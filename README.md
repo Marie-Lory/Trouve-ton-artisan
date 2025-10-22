@@ -1,7 +1,10 @@
 Prérequis :
 - Avoir fait des maquettes figma pour avoir la base du design du site
+- Node.js 18 ou +
+- MySQL 8 ou +
+- Git installé
 
-Instruction d'installation :
+Instruction d'installation  :
 - Installer WAMP pour faire fonctionner l'api
 - Pour créer un projet React.js ouvre ton terminal (dans VS Code, Ctrl + ù ou Ctrl + sur Windows).
 - Va dans le dossier où tu veux créer ton projet :
@@ -17,13 +20,7 @@ cd mon-projet
 npm install
 
 - Instruction de lancement:
-- (Sur VS Code) Reproduire le site fait sur figma en React.js et faire l'api en la connectant à Mysql (phpmyadmin qui est utilisable via WAMP)
-- Aimenter les différentes pages du site avec les données présentent dans la base de donnée SQL via l'api
-- Lance ton serveur :
-npm run strat
-- Tu verras une URL du style :
-http://localhost:5173/
-Et pour l'url en ligne c'est:
+Pour l'url en ligne c'est:
 https://trouve-ton-artisan-2pkp94m7s-marie-lorys-projects.vercel.app
 
 - Clique dessus et ton projet React s’affichera
