@@ -1,42 +1,27 @@
-import Artisans from "../models/ArtisansModel.js";
+import Artisan from "../models/ArtisansModel.js";
 
 const ArtisansService = {
-  // ✅ Récupération de tous les artisans, avec filtrage par catégorie si présent
-  getAllArtisanss: async (categorie) => {
-    const whereClause = categorie ? { categorie } : {};
-    return await Artisans.findAll({ where: whereClause });
+  getAllArtisanss: (categorie) => {
+    let where = {};
+    if (categorie) where.categorie = categorie;
+    return Artisan.findAll({ where });
   },
-
-  getArtisansById: async (id) => {
-    return await Artisans.findByPk(id);
-  },
-
-  createArtisans: async (data) => {
-    return await Artisans.create(data);
-  },
-
+  getArtisansById: (id) => Artisan.findByPk(id),
+  createArtisans: (data) => Artisan.create(data),
   updateArtisans: async (id, data) => {
-    const artisan = await Artisans.findByPk(id);
+    const artisan = await Artisan.findByPk(id);
     if (!artisan) return null;
-    return await artisan.update(data);
+    return artisan.update(data);
   },
-
-  patchArtisans: async (id, data) => {
-    const artisan = await Artisans.findByPk(id);
-    if (!artisan) return null;
-    return await artisan.update(data);
-  },
-
   deleteArtisans: async (id) => {
-    const artisan = await Artisans.findByPk(id);
+    const artisan = await Artisan.findByPk(id);
     if (!artisan) return null;
     await artisan.destroy();
     return true;
   },
-
-  // ✅ Récupération des 3 meilleurs artisans
-  getTopArtisans: async () => {
-    return await Artisans.findAll({
+  getTopArtisans: () => {
+    return Artisan.findAll({
+      where: { top: true },
       order: [["note", "DESC"]],
       limit: 3,
     });
