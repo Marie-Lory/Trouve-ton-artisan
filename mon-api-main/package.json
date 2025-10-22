@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "trouve-ton-artisan-backend",
   "version": "1.0.0",
   "scripts": {
