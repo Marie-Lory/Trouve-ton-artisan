@@ -1,4 +1,4 @@
-// ✅ app.js - version stable Render + CORS
+// ✅ server.js - version stable Render + CORS
 import 'dotenv/config';
 import express from "express";
 import cors from "cors";
