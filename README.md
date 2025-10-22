@@ -19,11 +19,27 @@ npm install
 - Instruction de lancement:
 - (Sur VS Code) Reproduire le site fait sur figma en React.js et faire l'api en la connectant à Mysql (phpmyadmin qui est utilisable via WAMP)
 - Aimenter les différentes pages du site avec les données présentent dans la base de donnée SQL via l'api
-- Lance ton serveur de dev :
-npm run dev
+- Lance ton serveur :
+npm run strat
 - Tu verras une URL du style :
 http://localhost:5173/
 Et pour l'url en ligne c'est:
-https://vercel.com/marie-lorys-projects/trouve-ton-artisan
+https://trouve-ton-artisan-2pkp94m7s-marie-lorys-projects.vercel.app
 
 - Clique dessus et ton projet React s’affichera
+
+- Pour les fichier env (frontend et backend) voici les variables d'environnement a appliquer : 
+Fronten : VITE_API_URL=https://trouve-ton-artisan-2.onrender.com/api
+Backend : # 🌐 Configuration du serveur backend
+PORT=5000
+
+# 💾 Connexion MySQL
+DB_HOST=metro.proxy.rlwy.net
+DB_PORT=46073
+DB_USER=root
+DB_NAME=railway
+DB_PASSWORD=znRZDsiadOadgzPbHWLFNmpiZDYuGAoq
+
+- Mon projet est mis en ligne sur 3 site differents : Frontend sur Vercel (https://vercel.com/marie-lorys-projects/trouve-ton-artisan), 
+Backend sur Render (https://dashboard.render.com/web/srv-d3rnm40dl3ps73fj1vog/events)
+et mon API sur Railway (https://railway.com/project/05fe5faf-f3c4-4f2b-bbb4-665b2b6fb456/service/b4927a34-4630-4c83-92ab-f454043923d1/database?environmentId=2c67ed31-a10d-4880-a53a-855ebd35dd15)
