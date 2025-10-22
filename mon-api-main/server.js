@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 
 app.use(cors({
   origin: [
-    "http://localhost:5173",
+    "mysql://root:znRZDsiadOadgzPbHWLFNmpiZDYuGAoq@metro.proxy.rlwy.net:46073/railway",
     "https://trouve-ton-artisan-pi.vercel.app"
   ],
   credentials: true,
