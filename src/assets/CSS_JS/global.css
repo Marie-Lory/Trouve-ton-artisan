@@ -1,0 +1,384 @@
+/* === GLOBAL.CSS RESPONSIVE === */
+
+/* Conteneur global qui occupe toute la hauteur */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Police personnalisée --- */
+@font-face {
+  font-family: 'Graphik-Regular';
+  src: url('/assets/font/Graphik/Graphik-Regular-Trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Le contenu principal prend tout l’espace disponible */
+main {
+  flex: 1;
+}
+
+/* Lien actif souligné automatiquement */
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  background-color: #FFFFFF;
+  padding: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-item a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.nav-item a:hover {
+  text-decoration: underline;
+}
+
+/* ====== NAVBAR CUSTOM ====== */
+.custom-navbar {
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-link {
+  color: black !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ====== BARRE DE RECHERCHE ====== */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-icon {
+  color: #0074c7;
+  font-size: 18px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 160px;
+  transition: width 0.3s ease;
+  outline: none;
+}
+
+.search-input:focus {
+  width: 200px;
+  background-color: #f0f0f0;
+  border-color: #0074c7;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: #0074c7 !important;
+  color: white !important;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Conteneur du footer */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Adresse (partie gauche du footer) */
+footer section a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+footer section a:hover {
+  color: #e0e0e0;
+  text-decoration: underline;
+}
+
+/* Deuxième section (liens du footer) */
+.footer-section-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-section-2 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-section-2 a:hover {
+  color: #e0e0e0;
+}
+
+/* === ✅ RESPONSIVE DESIGN === */
+
+/* ---------- TABLETTE (≤1280px) ---------- */
+@media screen and (max-width: 1280px) {
+  .titre-principal {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .etape,
+  .classement-artisans {
+    font-size: 1rem;
+  }
+
+  .artisan-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .artisan-card p {
+    font-size: 0.95rem;
+  }
+
+  .navbar-brand img {
+    max-width: 120px;
+  }
+
+  .search-input {
+    width: 130px;
+  }
+
+  .footer-section-2 a {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- MOBILE (≤768px) ---------- */
+@media screen and (max-width: 768px) {
+  /* TITRES */
+  .titre-principal {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    padding: 0 0.5rem;
+  }
+
+  h1, h2, h3 {
+    font-size: 1rem;
+  }
+
+  /* NAVIGATION */
+  .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-item {
+    text-align: center;
+    flex: none;
+  }
+
+  .search-form {
+    margin-top: 0.5rem;
+    justify-content: center;
+  }
+
+  .search-input {
+    width: 160px;
+  }
+
+  /* CARTES ARTISANS */
+  .artisans-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .artisan-card {
+    width: 90%;
+  }
+
+  /* FOOTER MOBILE */
+  footer {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-container section {
+    text-align: center;
+  }
+
+  /* Partie adresse centrée */
+  footer a[href*="maps"] {
+    display: inline-block;
+    line-height: 1.4;
+  }
+
+  address a {
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+
+  /* Liens du footer horizontaux et centrés */
+  .footer-section-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer-section-2 a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ✅ Style responsive pour tablettes (1280x800) et mobiles (430x932) */
+
+/* TABLETTE */
+@media screen and (max-width: 1280px) {
+  .titre-principal {
+    font-size: 1.8rem !important;
+    text-align: center;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .footer-section-2 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  footer .footer-section-2 a {
+    font-size: 0.9rem !important;
+  }
+
+  footer section a,
+  footer address a {
+    font-size: 1rem !important;
+  }
+}
+
+/* MOBILE */
+@media screen and (max-width: 430px) {
+  /* 🔹 Titre principal */
+  .titre-principal {
+    font-size: 1.3rem !important;
+    text-align: center;
+    line-height: 1.2em;
+  }
+}
+
+/* ===========================
+   💻 TABLETTE (≤ 1280px)
+   =========================== */
+@media screen and (max-width: 1280px) {
+  footer {
+    padding: 25px 10px;
+  }
+
+  .footer-address a,
+  .footer-address address a {
+    font-size: 0.95rem;
+  }
+
+  .footer-section-2 a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===========================
+   📱 MOBILE (≤ 430px)
+   =========================== */
+@media screen and (max-width: 430px) {
+  footer {
+    padding: 20px 10px;
+  }
+
+  /* Centrer le bloc adresse */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-address {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-address a,
+  .footer-address address a {
+    font-size: 0.85rem !important;
+    display: block;
+    line-height: 1.3em;
+  }
+
+  /* Liens du bas en ligne mais petits */
+  .footer-section-2 {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-section-2 a {
+    font-size: 0.75rem !important;
+    white-space: nowrap;
+  }
+}
